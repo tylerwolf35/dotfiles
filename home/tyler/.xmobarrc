@@ -1,0 +1,29 @@
+Config { font = "xft:Iosevka"
+       , border = NoBorder
+       , bgColor = "#1f1f28"
+       , fgColor = "#dcd7ba"
+       , alpha = 255
+       , position = TopSize L 100 40
+       , textOffset = 0
+       , textOffsets = [ 25, 24 ]
+       , lowerOnStart = True
+       , allDesktops = True
+       , persistent = False
+       , hideOnStart = False
+       , commands =
+         [ Run Date "%a, %d %b   <fn=1></fn>   %H:%M:%S" "date" 10
+         , Run Memory ["-t","MEM: <fc=#AAC0F0><usedratio></fc>%"] 10
+         , Run Com "/home/tyler/.config/xmonad/xmobar/cpu_temp.sh" [] "cpu" 10
+         , Run Com "/home/tyler/.config/xmonad/xmobar/gpu_temp.sh" [] "gpu" 10
+	 , Run Com "/home/tyler/.config/xmonad/xmobar/spotify.sh" [] "music" 10
+	 ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "\
+	    \⠀<action=xdotool exec playerctl play-pause>%music%</action>\
+            \}\
+	    \<action=xdotool exec gsimplecal>%date%</action>\
+	    \{\
+	    \%memory% | %cpu% | %gpu%\
+            \⠀"
+       }
