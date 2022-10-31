@@ -347,3 +347,4 @@ defaults = def {
         logHook            = myLogHook,
         startupHook        = myStartupHook >> addEWMHFullscreen
     }
+
