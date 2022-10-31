@@ -7,9 +7,8 @@
 ;; change backup directory
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
 
-;; theme
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'kanagawa t)
+;; font
+(set-frame-font "Iosevka Term 11" nil t)
 
 ;; icons
 (when (display-graphic-p)
