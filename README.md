@@ -1,6 +1,6 @@
 # Dotfiles
 
-[screenshot](screenshot.png)
+![screenshot](screenshot.png)
 
 **Operating System:** [GNU Guix](https://guix.gnu.org/)
 
