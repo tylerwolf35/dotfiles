@@ -52,3 +52,9 @@
 (global-set-key (kbd "C-x l") 'counsel-locate)
 (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+
+;; autocompletion
+(add-hook 'after-init-hook 'global-company-mode)
+
+;; lsp
+(require 'lsp)
