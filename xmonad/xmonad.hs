@@ -8,12 +8,12 @@ main = xmonad xfceConfig
 --myStartupHook = do
  -- spawn "xsetroot -cursor_name left_ptr"
 
-fixPanel :: IO ()
-fixPanel = void $ forkIO $ do
-  putStrLn "Delay starting"
-  threadDelay 5000000
-  putStrLn "Delay done"
-  putStr "Restarting xfce4-panel ... "
-  hFlush stdout
-  spawn "xfce4-panel -r"
-  putStrLn "[DONE]"
+--fixPanel :: IO ()
+--fixPanel = void $ forkIO $ do
+--  putStrLn "Delay starting"
+--  threadDelay 5000000
+--  putStrLn "Delay done"
+--  putStr "Restarting xfce4-panel ... "
+--  hFlush stdout
+--  spawn "xfce4-panel -r"
+--  putStrLn "[DONE]"
