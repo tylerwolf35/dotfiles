@@ -8,7 +8,7 @@
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
 
 ;; font
-(set-frame-font "Iosevka Term 11" nil t)
+(set-frame-font "Iosevka Term 12" nil t)
 
 ;; icons
 (when (display-graphic-p)
