@@ -10,12 +10,24 @@
 ;; Indicate which modules to import to access the variables
 ;; used in this configuration.
 (use-modules (gnu)
+	     (gnu packages xorg)
 	     (nongnu packages linux)
-	     (nongnu system linux-initrd))
-(use-service-modules cups desktop networking ssh xorg)
+	     (nongnu system linux-initrd)
+	     (nongnu packages nvidia)
+	     (guix transformations))
+(use-package-modules linux)
+(use-service-modules cups desktop networking ssh xorg linux)
+
+(define transform
+  (options->transformation
+   '((with-graft . "mesa=nvda"))))
 
 (operating-system
-  (kernel linux)
+  (kernel linux-lts)
+  (kernel-arguments (append
+		     '("modprobe.blacklist=nouveau")
+		     %default-kernel-arguments))
+  (kernel-loadable-modules (list nvidia-driver))
   (initrd microcode-initrd)
   (firmware (list linux-firmware))
   (locale "en_US.utf8")
@@ -44,7 +56,13 @@
                  (service openssh-service-type)
                  (service cups-service-type)
                  (set-xorg-configuration
-                  (xorg-configuration (keyboard-layout keyboard-layout))))
+                  (xorg-configuration
+		   (keyboard-layout keyboard-layout)
+		   (modules (cons* nvidia-driver %default-xorg-modules))
+		   (server (transform xorg-server))
+		   (drivers '("nvidia"))))
+	         (service kernel-module-loader-service-type '("nvidia_uvm"))
+		 (simple-service 'custom-udev-rules udev-service-type (list nvidia-driver)))
 
            ;; This is the default list of services we
            ;; are appending to.
