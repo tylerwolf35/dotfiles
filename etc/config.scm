@@ -11,6 +11,7 @@
 ;; used in this configuration.
 (use-modules (gnu)
 	     (gnu packages xorg)
+	     (gnu packages xfce)
 	     (nongnu packages linux)
 	     (nongnu system linux-initrd)
 	     (nongnu packages nvidia)
@@ -43,7 +44,7 @@
                   (home-directory "/home/tyler")
                   (supplementary-groups '("wheel" "netdev" "audio" "video")))
                 %base-user-accounts))
-  (packages (append (list (specification->package "nss-certs"))
+  (packages (append (list (specification->package "nss-certs") xfce4-genmon-plugin)
                     %base-packages))
 
   ;; Below is the list of system services.  To search for available
