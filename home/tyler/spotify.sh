@@ -3,7 +3,11 @@
 running=$(pidof spotify)
 if [ "$running" != "" ]; then
     artist=$(playerctl metadata artist)
-    song=$(playerctl metadata title | cut -c 1-60)
-    echo "<txt>$artist · $song</txt>"
+    title=$(playerctl metadata title | cut -c 1-60)
+    album=$(playerctl metadata album)
+    echo "<txt>$artist · $title</txt>"
     echo "<txtclick>xdotool exec playerctl play-pause</txtclick>"
+    echo "<tool>Title      $title"
+    echo "Artist     $artist"
+    echo "Album   $album</tool>"
 fi
