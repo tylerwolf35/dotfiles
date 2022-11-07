@@ -10,4 +10,6 @@ if [ "$running" != "" ]; then
     echo "<tool>Title      $title"
     echo "Artist     $artist"
     echo "Album   $album</tool>"
+else
+    echo ""
 fi
