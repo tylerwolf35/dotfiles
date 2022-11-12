@@ -37,3 +37,6 @@ alias icat="kitty +kitten icat"
 # flatpak dirs
 export XDG_DATA_DIRS=/var/lib/flatpak/exports/share
 export XDG_DATA_DIRS=/home/tyler/.local/share/flatpak/exports/share
+
+# path
+export PATH=$PATH:/home/tyler/bin
