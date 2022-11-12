@@ -1,0 +1,10 @@
+set previewer ~/.config/lf/lf_kitty_preview
+set cleaner ~/.config/lf/lf_kitty_clean
+
+cmd open ${{
+    case $(file --mime-type "$f" -bL) in
+        text/*|application/json) emacs -nw "$fx";;
+        video/*|application/pdf) zathura "$f" & ;;
+        *) for f in "$fx"; do exo-open "$f"> /dev/null 2> /dev/null & done;;
+    esac
+}}
