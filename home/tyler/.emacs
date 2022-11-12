@@ -58,3 +58,6 @@
 
 ;; lsp
 (require 'lsp)
+
+;; pdf-tools
+(pdf-loader-install)
