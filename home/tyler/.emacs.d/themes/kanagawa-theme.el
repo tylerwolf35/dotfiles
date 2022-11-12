@@ -23,7 +23,7 @@
   (old-white		"#C8C093" "#ffffff")
 
   (sumiInk-0		"#16161D" "#000000")
-  (sumiInk-1b		"#181820" "#000000")
+  (sumiInk-1b		"#1f1f28" "#000000")
   (sumiInk-1		"#1F1F28" "#080808")
   (sumiInk-2		"#2A2A37" "#121212")
   (sumiInk-3		"#363646" "#303030")
