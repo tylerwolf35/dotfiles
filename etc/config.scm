@@ -12,6 +12,7 @@
 (use-modules (gnu)
 	     (gnu packages xorg)
 	     (gnu packages xfce)
+	     (gnu packages cups)
 	     (nongnu packages linux)
 	     (nongnu system linux-initrd)
 	     (nongnu packages nvidia)
@@ -42,7 +43,7 @@
                   (comment "Tyler Wolf")
                   (group "users")
                   (home-directory "/home/tyler")
-                  (supplementary-groups '("wheel" "netdev" "audio" "video")))
+                  (supplementary-groups '("wheel" "netdev" "audio" "video" "lp")))
                 %base-user-accounts))
   (packages (append (list (specification->package "nss-certs") xfce4-genmon-plugin)
                     %base-packages))
@@ -55,7 +56,11 @@
                  ;; To configure OpenSSH, pass an 'openssh-configuration'
                  ;; record as a second argument to 'service' below.
                  (service openssh-service-type)
-                 (service cups-service-type)
+		 (service cups-service-type
+			  (cups-configuration
+			   (web-interface? #t)
+			   (extensions
+			    (list cups-filters hplip-minimal))))
                  (set-xorg-configuration
                   (xorg-configuration
 		   (keyboard-layout keyboard-layout)
