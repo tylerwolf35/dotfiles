@@ -8,7 +8,8 @@
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
 
 ;; font
-(set-frame-font "Iosevka Term 12" nil t)
+(add-to-list 'default-frame-alist '(font . "Iosevka Term 12"))
+;;(set-frame-font "Iosevka Term 12" nil t)
 
 ;; icons
 (when (display-graphic-p)
@@ -25,6 +26,7 @@
 ;; dashboard
 (require 'dashboard)
 (dashboard-setup-startup-hook)
+(setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
 
 ;; jump
 (require 'avy)
