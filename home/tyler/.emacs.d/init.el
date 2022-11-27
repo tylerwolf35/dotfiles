@@ -76,3 +76,13 @@
 (defengine google
   "https://www.google.com/search?q=%s"
   :keybinding "g")
+
+;; mail
+(setq user-mail-address "tyler@twolf.io")
+(setq user-full-name "Tyler Wolf")
+
+(setq message-send-mail-function 'smtpmail-send-it
+      smtpmail-default-smtp-server "127.0.0.1"
+      smtpmail-smtp-server "127.0.0.1"
+      smtpmail-smtp-service 1025
+      smtpmail-debug-info t)
