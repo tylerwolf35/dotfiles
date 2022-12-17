@@ -96,7 +96,7 @@
                                   'ext4))
                          (type "ext4"))
 		       (file-system
-			 (mount-point "/media/S70 Blade")
+			 (mount-point "/media/S70_Blade")
 			 (device (uuid
 				  "b8e1dc08-6d19-4e91-9d9b-9823dd37cb3f"
 				  'f2fs))
