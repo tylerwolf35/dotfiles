@@ -16,20 +16,21 @@
 	     (nongnu packages linux)
 	     (nongnu system linux-initrd)
 	     (nongnu packages nvidia)
+	     (nongnu services nvidia)
 	     (guix transformations))
 (use-package-modules linux)
 (use-service-modules cups desktop networking ssh xorg linux)
 
-(define transform
-  (options->transformation
-   '((with-graft . "mesa=nvda"))))
+;;(define transform
+;;  (options->transformation
+ ;;  '((with-graft . "mesa=nvda"))))
 
 (operating-system
-  (kernel linux-lts)
+  (kernel linux-6.1)
   (kernel-arguments (append
 		     '("modprobe.blacklist=nouveau")
 		     %default-kernel-arguments))
-  (kernel-loadable-modules (list nvidia-driver))
+  (kernel-loadable-modules (list nvidia-module))
   (initrd microcode-initrd)
   (firmware (list linux-firmware))
   (locale "en_US.utf8")
@@ -56,19 +57,18 @@
                  ;; To configure OpenSSH, pass an 'openssh-configuration'
                  ;; record as a second argument to 'service' below.
                  (service openssh-service-type)
+		 (service nvidia-service-type)
 		 (service cups-service-type
 			  (cups-configuration
 			   (web-interface? #t)
 			   (extensions
 			    (list cups-filters hplip-minimal))))
-                 (set-xorg-configuration
+                 (service xorg-server-service-type
                   (xorg-configuration
 		   (keyboard-layout keyboard-layout)
 		   (modules (cons* nvidia-driver %default-xorg-modules))
-		   (server (transform xorg-server))
-		   (drivers '("nvidia"))))
-	         (service kernel-module-loader-service-type '("nvidia_uvm"))
-		 (simple-service 'custom-udev-rules udev-service-type (list nvidia-driver)))
+		   ;;(server (transform xorg-server))
+		   (drivers '("nvidia")))))
 
            ;; This is the default list of services we
            ;; are appending to.
@@ -96,7 +96,7 @@
                                   'ext4))
                          (type "ext4"))
 		       (file-system
-			 (mount-point "/media/S70_Blade")
+		        (mount-point "/media/S70_Blade")
 			 (device (uuid
 				  "b8e1dc08-6d19-4e91-9d9b-9823dd37cb3f"
 				  'f2fs))
