@@ -78,11 +78,14 @@
   :keybinding "g")
 
 ;; mail
-(setq user-mail-address "tyler@twolf.io")
+(setq user-mail-address "tylerwolf@posteo.net")
 (setq user-full-name "Tyler Wolf")
 
-(setq message-send-mail-function 'smtpmail-send-it
-      smtpmail-default-smtp-server "127.0.0.1"
-      smtpmail-smtp-server "127.0.0.1"
-      smtpmail-smtp-service 1025
-      smtpmail-debug-info t)
+(setq gnus-select-method
+      '(nnimap "posteo.de"))
+
+(setq send-mail-function 'smtpmail-send-it
+      smtpmail-smtp-server "posteo.de"
+      smtpmail-smtp-service 465
+      smtpmail-stream-type 'ssl
+      gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\"]\"[#'()]")
