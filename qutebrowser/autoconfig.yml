@@ -6,6 +6,8 @@
 
 config_version: 2
 settings:
+  colors.webpage.preferred_color_scheme:
+    global: dark
   url.default_page:
     global: https://ecosia.org
   url.searchengines:
