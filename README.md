@@ -9,7 +9,7 @@
 
 **Window Manager:** [xmonad](https://xmonad.org/)
 
-**Text Editor:** [GNU Emacs](https://www.gnu.org/software/emacs/)
+**Text Editor:** [GNU Emacs](https://www.gnu.org/software/emacs/) with native-comp from [flatwhatson channel](https://github.com/flatwhatson/guix-channel)
 
 **Terminal:** [Kitty](https://sw.kovidgoyal.net/kitty/)
 
