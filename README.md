@@ -16,3 +16,5 @@
 **Font:** [Iosevka Term](https://typeof.net/Iosevka/)
 
 **Theme:** [Kanagawa](https://github.com/rebelot/kanagawa.nvim)
+
+These dotfiles are for my desktop. In terms of keyboard, I use the QWERTY layout with a NiZ Plum Atom 68. I hope to learn DVORAK one of these days.
