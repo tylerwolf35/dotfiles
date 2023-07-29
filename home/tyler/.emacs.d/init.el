@@ -125,13 +125,6 @@
 (setq mastodon-instance-url "https://freeradical.zone"
       mastodon-active-user "tylerwolf")
 
-;; engine-mode
-(require 'engine-mode)
-(engine-mode t)
-(defengine google
-  "https://www.google.com/search?q=%s"
-  :keybinding "g")
-
 ;; mail
 (setq user-mail-address "tylerwolf@posteo.net")
 (setq user-full-name "Tyler Wolf")
