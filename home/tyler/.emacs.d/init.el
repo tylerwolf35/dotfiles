@@ -129,7 +129,7 @@
 		 :user-id "@tylerwolf:matrix.org"))
 
 ;; mastodon.el
-(setq mastodon-instance-url "https://freeradical.zone"
+(setq mastodon-instance-url "https://emacs.ch"
       mastodon-active-user "tylerwolf")
 
 ;; telega.el
