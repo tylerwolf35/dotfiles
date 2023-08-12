@@ -8,6 +8,8 @@ config_version: 2
 settings:
   colors.webpage.preferred_color_scheme:
     global: dark
+  completion.scrollbar.width:
+    global: 12
   content.notifications.enabled:
     https://lemmy.ml: false
   url.default_page:
