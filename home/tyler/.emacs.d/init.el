@@ -136,6 +136,10 @@
 (define-key global-map (kbd "C-c t") telega-prefix-map)
 (setq telega-translate-to-language-by-default "en")
 
+;; eat
+(add-hook 'eshell-load-hook #'eat-eshell-mode)
+(add-hook 'eshell-load-hook #'eat-eshell-visual-command-mode)
+
 ;; initialize path from shell
 (when (daemonp)
   (exec-path-from-shell-initialize))
