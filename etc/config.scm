@@ -26,7 +26,7 @@
  ;;  '((with-graft . "mesa=nvda"))))
 
 (operating-system
-  (kernel linux-6.1)
+  (kernel linux-lts)
   (kernel-arguments (append
 		     '("modprobe.blacklist=nouveau")
 		     %default-kernel-arguments))
