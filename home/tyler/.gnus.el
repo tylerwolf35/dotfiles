@@ -2,7 +2,6 @@
 (setq user-full-name "Tyler Wolf"
       user-mail-address "tylerwolf@posteo.net")
 
-
 ;; IMAP
 (setq gnus-select-method '(nnimap "posteo.de"))
 
