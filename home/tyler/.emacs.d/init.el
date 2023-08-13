@@ -122,6 +122,9 @@
 ;; pdf-tools
 (pdf-loader-install)
 
+;; qutebrowser
+(setq browse-url-browser-function 'browse-url-generic browse-url-generic-program "qutebrowser")
+
 ;; ement.el
 (defun my/ement-connect ()
   (interactive)
