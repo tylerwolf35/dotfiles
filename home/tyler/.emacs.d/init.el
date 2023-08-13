@@ -122,7 +122,7 @@
 ;; pdf-tools
 (pdf-loader-install)
 
-;; qutebrowser
+;; set default browser
 (setq browse-url-browser-function 'browse-url-generic browse-url-generic-program "qutebrowser")
 
 ;; ement.el
